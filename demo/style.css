@@ -1,0 +1,53 @@
+body {
+	color: #333;
+	font-family: monospace;
+	margin: 0;
+}
+
+.empty-space {
+	height: 2000px;
+	text-align: center;
+	padding-top: 200px;
+}
+
+.element {
+	background: #333;
+	color: #fff;
+	font-size: 20px;
+	line-height: 300px;
+	text-align: center;
+}
+
+.fade-and-zoom {
+	animation-name: fade-and-zoom-animation;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fade-and-zoom-animation {
+	from {
+		opacity: 0;
+		transform: scale(.8);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.slide-from-right {
+	animation-name: slide-from-right-animation;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slide-from-right-animation {
+	from {
+		opacity: 0;
+		transform: translateX(50%) rotate(-5deg);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0) rotate(0deg);
+	}
+}
