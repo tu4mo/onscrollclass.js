@@ -16,4 +16,4 @@ Define a class that gets assigned for elements that are scrolled into view using
 <div class="foo" data-onscrollclass="bar"></div>
 ```
 
-Now, add transitions, animations, etc. in your CSS class `.foo.bar`.
+Now, add transitions, animations, etc. in your CSS class `.bar`.
