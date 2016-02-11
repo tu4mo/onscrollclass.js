@@ -32,9 +32,10 @@
 	 * @return {Array} Array of elements.
 	 */
 	function getElements() {
+		var elements = [];
+
 		// Get NodeList of elements with data-onscrollclass attribute
 		var elementsNodeList = document.querySelectorAll('[data-onscrollclass]');
-		var elements = [];
 
 		// Convert NodeList to array
 		for (var i = elementsNodeList.length; i--; elements.unshift(elementsNodeList[i]));
