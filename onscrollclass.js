@@ -11,6 +11,9 @@
 
 	var onScrollElements = [];
 
+	/**
+	 * Gets the elements and adds the EventListener.
+	 */
 	function init() {
 		onScrollElements = getElements();
 
@@ -23,8 +26,13 @@
 		}
 	}
 
+	/**
+	 * Returns a list of elements with data-onscrollclass attribute.
+	 *
+	 * @return {Array} Array of elements.
+	 */
 	function getElements() {
-		// Get elements with data-onscrollclass
+		// Get NodeList of elements with data-onscrollclass attribute
 		var elementsNodeList = document.querySelectorAll('[data-onscrollclass]');
 		var elements = [];
 
@@ -34,11 +42,15 @@
 		return elements;
 	}
 
+	/**
+	 * Goes through all the onScrollElements and checks if they are in view.
+	 */
 	function checkElements() {
 		var onScrollElementsLength = onScrollElements.length;
 
 		if (onScrollElementsLength > 0) {
 			for (var i = onScrollElementsLength - 1; i > -1; i--) {
+				// Get element's onscrollclass
 				var element = onScrollElements[i];
 				var className = element.getAttribute('data-onscrollclass');
 
@@ -46,7 +58,7 @@
 					// Add class to element
 					element.classList.add(className);
 
-					// Remove element from array
+					// Remove element from onScrollElements
 					onScrollElements.splice(i, 1);
 				}
 			}
@@ -56,6 +68,12 @@
 		}
 	}
 
+	/**
+	 * Checks if the element is in view.
+	 *
+	 * @param  {Element} element The element to check for.
+	 * @return {Boolean} Returns whether element is in view.
+	 */
 	function isElementInView(element) {
 		var rect = element.getBoundingClientRect();
 
@@ -64,6 +82,7 @@
 		);
 	}
 
+	// Fire up
 	init();
 
 })(window, document);
